@@ -29,7 +29,8 @@
     "builds",
     "api",
     "types",
-    "scripts"
+    "scripts",
+    "rollup.config.js"
   ],
   "prettier": {
     "trailingComma": "none",
