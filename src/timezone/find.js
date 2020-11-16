@@ -47,7 +47,7 @@ const lookupTz = (str, zones) => {
     return tz
   }
   //try city-names
-  console.log('5:' + str);
+  console.log(cities);
   if (cities.hasOwnProperty(tz) === true) {
     return cities[tz]
   }
