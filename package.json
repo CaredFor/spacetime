@@ -28,7 +28,8 @@
   "files": [
     "builds",
     "api",
-    "types"
+    "types",
+    "scripts"
   ],
   "prettier": {
     "trailingComma": "none",
