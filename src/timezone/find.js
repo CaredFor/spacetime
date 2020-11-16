@@ -24,35 +24,42 @@ const normalize = tz => {
 
 // try our best to reconcile the timzone to this given string
 const lookupTz = (str, zones) => {
+  console.log('1:' + str);
   if (!str) {
     return local
   }
   let tz = str.trim()
   let split = str.split('/')
+  console.log('2:' + str);
   //support long timezones like 'America/Argentina/Rio_Gallegos'
   if (split.length > 2 && zones.hasOwnProperty(tz) === false) {
     tz = split[0] + '/' + split[1]
   }
   tz = tz.toLowerCase()
+  console.log('3:' + str);
   if (zones.hasOwnProperty(tz) === true) {
     return tz
   }
   //lookup more loosely..
   tz = normalize(tz)
+  console.log('4:' + str);
   if (zones.hasOwnProperty(tz) === true) {
     return tz
   }
   //try city-names
+  console.log('5:' + str);
   if (cities.hasOwnProperty(tz) === true) {
     return cities[tz]
   }
   // //try to parse '-5h'
   if (/[0-9]/.test(tz) === true) {
     let id = parseOffset(tz)
+    console.log('6:' + id);
     if (id) {
       return id
     }
   }
+  console.log('7:' + str);
 
   throw new Error(
     "Spacetime: Cannot find timezone named: '" + str + "'. Please enter an IANA timezone id."
