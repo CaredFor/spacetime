@@ -30,6 +30,7 @@
     "api",
     "types",
     "scripts",
+    "src",
     "rollup.config.js"
   ],
   "prettier": {
