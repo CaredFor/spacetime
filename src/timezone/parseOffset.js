@@ -5,7 +5,7 @@ const gmtOffset = /gmt([\-+]?[0-9]+)/i
 
 const toIana = function(num) {
   num = Number(num)
-  if (num > -13 && num < 13) {
+  if (num > -13 && num <= 13) {
     num = num * -1 //it's opposite!
     num = (num > 0 ? '+' : '') + num //add plus sign
     return 'etc/gmt' + num
