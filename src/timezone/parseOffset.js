@@ -16,7 +16,6 @@ const toIana = function(num) {
 const parseOffset = function(tz) {
   // '+5hrs'
   let m = tz.match(isOffset)
-
   if (m !== null) {
     return toIana(m[1])
   }
